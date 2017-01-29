@@ -1,0 +1,54 @@
+<head>
+<title> demo </title>
+
+<style>
+  body { margin: 0; }
+</style>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/p5.js"></script>
+<script type="text/javascript" src="js/p5.sound.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/pitchdetect.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<style>
+  #flat, #sharp {
+    display: none;
+  }
+  .sharp #sharp, .flat #flat {
+    display: inline;
+  }
+  .confident {
+    background: #555;
+  }
+  .vague {
+    background: #333;
+  }
+  #detector {
+    height: 20px;
+    transition: all .3s;
+  }
+  #detector div {
+    display: inline-block;
+    width: 30%;
+  }
+</style>
+</head>
+
+<body>
+<!-- <canvas id="waveform" width="512" height="256"></canvas> -->
+
+<div id="detector">
+  <div class="pitch"><span id="pitch">--</span>Hz</div>
+  <div class="note"><span id="note">--</span></div>   
+  <div id="detune">
+    <span id="detune_amt">--</span>
+    <span id="flat">cents &#9837;</span>
+    <span id="sharp">cents &#9839;</span>
+  </div>
+</div>
+<div class='btn' id='btn-save'> save </div>
+<div class='credit'> Made with <3 by <a href='http://hanax.co'> Hannah </a>. </div>
+</body>
+</html>
