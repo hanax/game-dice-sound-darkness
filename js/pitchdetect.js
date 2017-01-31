@@ -104,7 +104,7 @@ function getUserMedia(dictionary, callback) {
       if (navigator.getUserMedia)
         navigator.getUserMedia(dictionary, callback, error);
       else {
-        navigator.mediaDevices.getUserMedia({audio: true}).then(callback);
+        navigator.mediaDevices.getUserMedia(dictionary).then(callback);
       }
     } catch (e) {
         alert('getUserMedia threw exception :' + e);
