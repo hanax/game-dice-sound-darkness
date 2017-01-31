@@ -1,3 +1,5 @@
+// look into chording/multi-player
+
 var input;
 var amplitude;
 var lastNote = null;
@@ -39,7 +41,7 @@ function drawCircleCurrent() {
   var size = map(amplitude.getLevel(), 0, 0.3, 50, 300);
   ellipse(windowWidth/2, windowHeight/2, size, size);
 
-  if (amplitude.getLevel() > 0.002 && Math.abs(curNote - lastNote) < 3) {
+  if (amplitude.getLevel() > 0.005 && Math.abs(curNote - lastNote) < 3) {
     diff += Math.min(20, size / 10);
   } else {
     diff = MIN_DIFF;

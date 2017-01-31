@@ -101,7 +101,11 @@ function getUserMedia(dictionary, callback) {
         navigator.getUserMedia ||
         navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia;
-      navigator.getUserMedia(dictionary, callback, error);
+      if (navigator.getUserMedia)
+        navigator.getUserMedia(dictionary, callback, error);
+      else {
+        navigator.mediaDevices.getUserMedia({audio: true}).then(callback);
+      }
     } catch (e) {
         alert('getUserMedia threw exception :' + e);
     }
